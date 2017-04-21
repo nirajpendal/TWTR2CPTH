@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if User.currentUser != nil {
             print("Found the user")
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "TweetNavigationStoryBoardId")
+            let vc = storyBoard.instantiateViewController(withIdentifier: "SliderContainerViewController")
             window?.rootViewController = vc
             
         } else {
