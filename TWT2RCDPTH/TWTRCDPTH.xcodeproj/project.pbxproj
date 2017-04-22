@@ -14,6 +14,10 @@
 		887E56481EA9D54E0085AF81 /* SliderContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E56471EA9D54E0085AF81 /* SliderContainerViewController.swift */; };
 		887E564A1EA9DAA00085AF81 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E56491EA9DAA00085AF81 /* MenuViewController.swift */; };
 		887E564C1EA9DAFD0085AF81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E564B1EA9DAFD0085AF81 /* ProfileViewController.swift */; };
+		887E56521EAA716C0085AF81 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887E56511EAA716C0085AF81 /* TweetCell.xib */; };
+		887E565A1EAA7D6F0085AF81 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E56591EAA7D6F0085AF81 /* ProfileHeader.swift */; };
+		887E565C1EAA7D8A0085AF81 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887E565B1EAA7D8A0085AF81 /* ProfileHeader.xib */; };
+		887E56861EAA85440085AF81 /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887E56851EAA85440085AF81 /* UIScrollView+APParallaxHeader.m */; };
 		8886367B1EA0EB0000FC5185 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8886367A1EA0EB0000FC5185 /* LoginViewController.swift */; };
 		88C2B5F91EA0DFAD004DC309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2B5F81EA0DFAD004DC309 /* AppDelegate.swift */; };
 		88C2B5FB1EA0DFAD004DC309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2B5FA1EA0DFAD004DC309 /* ViewController.swift */; };
@@ -37,6 +41,12 @@
 		887E56471EA9D54E0085AF81 /* SliderContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderContainerViewController.swift; sourceTree = "<group>"; };
 		887E56491EA9DAA00085AF81 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		887E564B1EA9DAFD0085AF81 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		887E56511EAA716C0085AF81 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		887E56591EAA7D6F0085AF81 /* ProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		887E565B1EAA7D8A0085AF81 /* ProfileHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
+		887E56831EAA85440085AF81 /* TWTRCDPTH-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TWTRCDPTH-Bridging-Header.h"; sourceTree = "<group>"; };
+		887E56841EAA85440085AF81 /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
+		887E56851EAA85440085AF81 /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
 		8886367A1EA0EB0000FC5185 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		88C2B5F51EA0DFAD004DC309 /* TWTRCDPTH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTRCDPTH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C2B5F81EA0DFAD004DC309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				885A1DE41EA32FF000F1DA3A /* TweetCell.swift */,
+				887E56511EAA716C0085AF81 /* TweetCell.xib */,
+				887E56591EAA7D6F0085AF81 /* ProfileHeader.swift */,
+				887E565B1EAA7D8A0085AF81 /* ProfileHeader.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -88,6 +101,23 @@
 				887E56471EA9D54E0085AF81 /* SliderContainerViewController.swift */,
 			);
 			name = Slider;
+			sourceTree = "<group>";
+		};
+		887E564D1EAA709B0085AF81 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		887E56821EAA85380085AF81 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				887E56841EAA85440085AF81 /* UIScrollView+APParallaxHeader.h */,
+				887E56851EAA85440085AF81 /* UIScrollView+APParallaxHeader.m */,
+				887E56831EAA85440085AF81 /* TWTRCDPTH-Bridging-Header.h */,
+			);
+			name = 3rdParty;
 			sourceTree = "<group>";
 		};
 		88C2B5EC1EA0DFAD004DC309 = {
@@ -111,6 +141,8 @@
 		88C2B5F71EA0DFAD004DC309 /* TWTRCDPTH */ = {
 			isa = PBXGroup;
 			children = (
+				887E56821EAA85380085AF81 /* 3rdParty */,
+				887E564D1EAA709B0085AF81 /* xib */,
 				88E675EC1EA4652B00A33594 /* SupportingFiles */,
 				88F8C5381EA1C46300D670BB /* API */,
 				88F8C53A1EA1C46E00D670BB /* Models */,
@@ -207,6 +239,7 @@
 				TargetAttributes = {
 					88C2B5F41EA0DFAD004DC309 = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -237,6 +270,8 @@
 				88C2B6031EA0DFAD004DC309 /* LaunchScreen.storyboard in Resources */,
 				88C2B6001EA0DFAD004DC309 /* Assets.xcassets in Resources */,
 				88C2B5FE1EA0DFAD004DC309 /* Main.storyboard in Resources */,
+				887E565C1EAA7D8A0085AF81 /* ProfileHeader.xib in Resources */,
+				887E56521EAA716C0085AF81 /* TweetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +338,11 @@
 				88F8C53E1EA1C48C00D670BB /* User.swift in Sources */,
 				88E675EB1EA4652800A33594 /* ActivityIndicator.swift in Sources */,
 				88F8C5421EA1DE4600D670BB /* TweetsViewController.swift in Sources */,
+				887E565A1EAA7D6F0085AF81 /* ProfileHeader.swift in Sources */,
 				887E564A1EA9DAA00085AF81 /* MenuViewController.swift in Sources */,
 				887E56481EA9D54E0085AF81 /* SliderContainerViewController.swift in Sources */,
 				88F8C5401EA1C72600D670BB /* TwitterClient.swift in Sources */,
+				887E56861EAA85440085AF81 /* UIScrollView+APParallaxHeader.m in Sources */,
 				88F8C53C1EA1C48300D670BB /* Tweet.swift in Sources */,
 				885A1DE71EA3E93D00F1DA3A /* DetailTweetViewController.swift in Sources */,
 				885A1DE91EA3F0FB00F1DA3A /* NewTweetViewController.swift in Sources */,
@@ -434,10 +471,13 @@
 			baseConfigurationReference = 1F06317F2ABD3587BC1FF7C8 /* Pods-TWTRCDPTH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TWTRCDPTH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.ios.apps.TWTRCDPTH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TWTRCDPTH/TWTRCDPTH-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -447,10 +487,12 @@
 			baseConfigurationReference = 0CD2681302992BFDF24134A6 /* Pods-TWTRCDPTH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TWTRCDPTH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.ios.apps.TWTRCDPTH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TWTRCDPTH/TWTRCDPTH-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

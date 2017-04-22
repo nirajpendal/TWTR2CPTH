@@ -106,8 +106,6 @@ class TwitterClient:BDBOAuth1SessionManager {
             failure(error)
         })
         
-        
-        
     }
     
     func postTweet(text: String, completionHandler:@escaping (Bool, Error?)->()) {
@@ -122,6 +120,87 @@ class TwitterClient:BDBOAuth1SessionManager {
             completionHandler(false, error)
         }
         
+    }
+    
+    func getUserTimeLine(userScreenName:String? = nil, success: @escaping ([Tweet]) -> (), failure: @escaping (Error) -> ()) {
+        
+        var requestUrlString = TwitterClient.baseURL+"/1.1/statuses/user_timeline.json"
+        
+        if let userScreenName = userScreenName {
+            requestUrlString.append("?screen_name=\(userScreenName)")
+        }
+        
+        self.get(requestUrlString, parameters: nil, progress: nil, success: { (taks:URLSessionDataTask, response:Any?) in
+            
+            let responseDictionaries = response as! [[String:AnyObject]]
+            
+            let tweets = Tweet.getTweets(dictionaries: responseDictionaries)
+            success(tweets)
+            
+            
+        }, failure: { (task:URLSessionDataTask?, error:Error) in
+            print(error.localizedDescription)
+            failure(error)
+        })
+
+    }
+    
+    func userLookUp(userScreenName:String? = nil, success: @escaping (User) -> (), failure: @escaping (Error) -> ()) {
+       
+        var requestUrlString = TwitterClient.baseURL+"/1.1/users/lookup.json"
+        
+        if let userScreenName = userScreenName {
+            requestUrlString.append("?screen_name=\(userScreenName)")
+        }
+        
+        self.get(requestUrlString, parameters: nil, progress: nil, success: { (taks:URLSessionDataTask, response:Any?) in
+            
+            let responseDictionaries = response as! [[String:AnyObject]]
+            
+            if let responseDict = responseDictionaries.first
+            {
+                let user = User(dictionary: responseDict)
+                success(user)
+            } else {
+                failure(NSError(domain: "Failed to get user", code: 1, userInfo: nil))
+            }
+            
+            
+        }, failure: { (task:URLSessionDataTask?, error:Error) in
+            print(error.localizedDescription)
+            failure(error)
+        })
+        
+    }
+    
+//    func getUserTimeLine(success: @escaping ([Tweet]) -> (), failure: @escaping (Error) -> ()) {
+//        self.get(TwitterClient.baseURL+"/1.1/statuses/user_timeline.json", parameters: nil, progress: nil, success: { (taks:URLSessionDataTask, response:Any?) in
+//            
+//            let responseDictionaries = response as! [[String:AnyObject]]
+//            
+//            let tweets = Tweet.getTweets(dictionaries: responseDictionaries)
+//            success(tweets)
+//            
+//            
+//        }, failure: { (task:URLSessionDataTask?, error:Error) in
+//            print(error.localizedDescription)
+//            failure(error)
+//        })
+//    }
+    
+    func getMentions(success: @escaping ([Tweet]) -> (), failure: @escaping (Error) -> ()) {
+        self.get(TwitterClient.baseURL+"/1.1/statuses/mentions_timeline.json", parameters: nil, progress: nil, success: { (taks:URLSessionDataTask, response:Any?) in
+            
+            let responseDictionaries = response as! [[String:AnyObject]]
+            
+            let tweets = Tweet.getTweets(dictionaries: responseDictionaries)
+            success(tweets)
+            
+            
+        }, failure: { (task:URLSessionDataTask?, error:Error) in
+            print(error.localizedDescription)
+            failure(error)
+        })
     }
     
     

@@ -6,31 +6,111 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TWTRCDPTH/LoginViewController.swift"
-            timestampString = "514448679.459173"
+            filePath = "TWTRCDPTH/ProfileHeader.swift"
+            timestampString = "514583825.182817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "onLogin(_:)"
-            landmarkType = "7">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "user"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TWTRCDPTH.ProfileHeader.user.didset : Swift.ImplicitlyUnwrappedOptional&lt;TWTRCDPTH.User&gt;"
+                  moduleName = "TWTRCDPTH"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Niraj_Data/RnD/CodePath/TWTR2CPTH/TWT2RCDPTH/TWTRCDPTH/ProfileHeader.swift"
+                  timestampString = "514581340.316513"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TWTRCDPTH.ProfileHeader.user.didset : Swift.ImplicitlyUnwrappedOptional&lt;TWTRCDPTH.User&gt;"
+                  moduleName = "TWTRCDPTH"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Niraj_Data/RnD/CodePath/TWTR2CPTH/TWT2RCDPTH/TWTRCDPTH/ProfileHeader.swift"
+                  timestampString = "514581340.318363"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TWTRCDPTH/SliderContainerViewController.swift"
-            timestampString = "514448647.223075"
+            filePath = "TWTRCDPTH/ProfileViewController.swift"
+            timestampString = "514586495.805358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TWTRCDPTH.ProfileViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "TWTRCDPTH"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Niraj_Data/RnD/CodePath/TWTR2CPTH/TWT2RCDPTH/TWTRCDPTH/ProfileViewController.swift"
+                  timestampString = "514586938.705686"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "357">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TWTRCDPTH.ProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "TWTRCDPTH"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Niraj_Data/RnD/CodePath/TWTR2CPTH/TWT2RCDPTH/TWTRCDPTH/ProfileViewController.swift"
+                  timestampString = "514586938.7078"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TWTRCDPTH/ProfileViewController.swift"
+            timestampString = "514586498.010325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -38,48 +118,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TWTRCDPTH/SliderContainerViewController.swift"
-            timestampString = "514449331.154302"
+            filePath = "TWTRCDPTH/TwitterClient.swift"
+            timestampString = "514586507.387998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TWTRCDPTH/SliderContainerViewController.swift"
-            timestampString = "514449332.881527"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "selectionChanged(selectedIndex:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TWTRCDPTH/MenuViewController.swift"
-            timestampString = "514449336.550117"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "userLookUp(userScreenName:success:failure:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

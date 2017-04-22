@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol ProfileImageDelegate {
+    func didTapProfileImage(sender: UITableViewCell)
+}
+
 class TweetCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLable: UILabel!
     @IBOutlet weak var textLable: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
+    
+    var delegate: ProfileImageDelegate?
     
     var tweet:Tweet!{
         
@@ -55,11 +61,20 @@ class TweetCell: UITableViewCell {
         }
     }
     
+    func tap(_ sender: UITapGestureRecognizer) {
+        self.delegate?.didTapProfileImage(sender: self)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.profileImageView.clipsToBounds = true
         self.profileImageView.layer.cornerRadius = 3
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
+
+        self.profileImageView.addGestureRecognizer(tapGesture)
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -15,7 +15,7 @@ class SliderContainerViewController: UIViewController, MenuDelegate {
     var originalLeftMargin: CGFloat!
     var menuContoller: MenuViewController?
     var tweetsViewController: UIViewController!
-    var profileViewController: UIViewController!
+    var profileViewController: ProfileViewController!
     var accountsViewController: UIViewController!
     var navController: UINavigationController!
     var viewControllers:[UIViewController]!
@@ -26,10 +26,13 @@ class SliderContainerViewController: UIViewController, MenuDelegate {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         tweetsViewController = storyBoard.instantiateViewController(withIdentifier: "TweetsViewController")
-        profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController")
+        profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        
+        //profileViewController.use
+        
         accountsViewController = storyBoard.instantiateViewController(withIdentifier: "AccountsViewController")
         
-        self.viewControllers = [tweetsViewController, profileViewController, accountsViewController]
+        self.viewControllers = [profileViewController, tweetsViewController, accountsViewController]
         self.selectionChanged(selectedIndex: 0)
     }
     

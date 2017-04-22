@@ -22,6 +22,8 @@ class TweetsViewController: UIViewController {
 
         tweetTableView.delegate = self
         tweetTableView.dataSource = self
+
+        tweetTableView.register(UINib(nibName: "TweetCell", bundle: nil) , forCellReuseIdentifier: "TweetCell")
         
         self.tweetTableView.rowHeight = UITableViewAutomaticDimension
         self.tweetTableView.estimatedRowHeight = 120
@@ -46,6 +48,7 @@ class TweetsViewController: UIViewController {
         TwitterClient.sharedInstance.logOut()
         
     }
+    
     func  displayError(message:String)  {
         let alertView = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -120,10 +123,24 @@ class TweetsViewController: UIViewController {
             if let selectedTweet = selectedTweet {
                 detailTweetViewController.tweet = self.tweets[selectedTweet]
             }
+        } else if let profileViewController = segue.destination as? ProfileViewController {
+            if let index = sender as? Int {
+                profileViewController.screenName = self.tweets[index].profileUserName
+            }
+            
         }
     }
-    
+}
 
+extension TweetsViewController: ProfileImageDelegate{
+    func didTapProfileImage(sender: UITableViewCell) {
+        if let indexRow = self.tweetTableView.indexPath(for: sender)?.row {
+            //print(self.tweets[indexRow].profileUserName)
+            self.performSegue(withIdentifier: "ProfileDetailsSegue", sender:indexRow )
+        }
+        
+        
+    }
 }
 
 extension TweetsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -135,6 +152,7 @@ extension TweetsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         cell.tweet = self.tweets[indexPath.row]
+        cell.delegate = self
         //cell.textLable?.text = "123 45 5 6 7   3 2 4  5 6 7 4 3  3 5 6 7  4  3   3 5 6 7  7 65 4 3  4 56  7 8 7 65 4 3  4 5 6 7 8  76 54 3  4 56 7 8   76 54   5 67 8  7 65 4 3 e  5 6 7 65 4 3  45 67    8 7 65 4 3  4 56 7  65 43  4 56 7 8  Done"
         return cell
     }

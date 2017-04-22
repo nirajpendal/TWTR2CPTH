@@ -14,6 +14,7 @@ class User {
     
     var name: String?
     var tagLine: String?
+    var profileBackGroundURL: URL?
     var profileURL: URL?
     var screenName: String?
     
@@ -30,7 +31,13 @@ class User {
         
         name = dictionary ["name"] as? String
         tagLine = dictionary ["description"] as? String
-        let profileString = dictionary ["profile_background_image_url_https"] as? String
+        let profileBGString = dictionary ["profile_background_image_url_https"] as? String
+        
+        if let profileBGStringNotNil = profileBGString {
+            profileBackGroundURL = URL(string: profileBGStringNotNil)!
+        }
+        
+        let profileString = dictionary ["profile_image_url_https"] as? String
         
         if let profileStringNotNil = profileString {
             profileURL = URL(string: profileStringNotNil)!
