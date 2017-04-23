@@ -16,6 +16,7 @@ class TweetsViewController: UIViewController {
     let client = TwitterClient.sharedInstance
     let refreshControl = UIRefreshControl()
     let activityIndicator = ActivityIndicator()
+    var isMentions = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,11 @@ class TweetsViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(fetchTweets), for: UIControlEvents.valueChanged)
         self.tweetTableView.refreshControl = refreshControl
         
-        fetchTweets()
+        if !isMentions {
+            fetchTweets()
+        } else {
+            fetchMentions()
+        }
         
         let rightBarItem = UIBarButtonItem(title: "Post", style: .plain, target: self, action: #selector(rightButtonPressed))
         self.navigationItem.rightBarButtonItem = rightBarItem
@@ -42,6 +47,31 @@ class TweetsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    func fetchMentions() {
+        self.presentIndicator()
+        client.getMentions(success: {[weak self] (tweets: [Tweet]) in
+            
+            guard let strognSelf = self else {
+                return
+            }
+            
+            strognSelf.tweets = tweets
+            strognSelf.tweetTableView.reloadData()
+            strognSelf.refreshControl.endRefreshing()
+            
+            self?.hideIndicator()
+            
+        }) { [weak self] (error:Error) in
+            print(error.localizedDescription)
+            self?.refreshControl.endRefreshing()
+            
+            self?.displayError(message: error.localizedDescription)
+            
+            self?.hideIndicator()
+        }
+    }
+
     
     @IBAction func logOutTapped(_ sender: Any) {
         

@@ -17,6 +17,10 @@ class User {
     var profileBackGroundURL: URL?
     var profileURL: URL?
     var screenName: String?
+    var followersCount: Int?
+    var favouritesCount: Int?
+    var listedCount: Int?
+    var statusesCount: Int?
     
     var tweets:[Tweet]?
     private static var _currentUser:User?
@@ -43,6 +47,10 @@ class User {
             profileURL = URL(string: profileStringNotNil)!
         }
         
+        followersCount = dictionary["followers_count"] as? Int
+        favouritesCount = dictionary["favourites_count"] as? Int
+        listedCount = dictionary["listed_count"] as? Int
+        statusesCount = dictionary["statuses_count"] as? Int
         screenName =  dictionary ["screen_name"] as? String
         
     }

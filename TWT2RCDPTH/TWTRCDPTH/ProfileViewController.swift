@@ -23,12 +23,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.screenName = "POTUS"
-        
         if self.screenName == nil {
-            self.user = User.currentUser
-            self.loadViewDetails()
-        } else {
+            //self.user = User.currentUser
+            screenName = User.currentUser?.screenName
+        }
+            //self.loadViewDetails()
+        //} else {
             TwitterClient.sharedInstance.userLookUp(userScreenName: screenName, success: { (user: User) in
                 self.user = user
                 self.loadViewDetails()
@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
             }, failure: { (error: Error) in
                 self.displayError(message: error.localizedDescription)
             })
-        }
+        //}
         // Do any additional setup after loading the view.
     }
     

@@ -24,6 +24,9 @@ class ProfileHeader: UITableViewHeaderFooterView {
             }
             self.profileNameLabel.text = user.name
             self.profileUserNameLabel.text = "@\(user.screenName!)"
+            self.numOfFollowersLabel.text = "\(user.followersCount ?? 0)"
+            self.numOfFollowingLabel.text = "\(user.favouritesCount ?? 0)"
+            self.numOfTweetsLable.text = "\(user.statusesCount ?? 0)"
         }
     }
     
