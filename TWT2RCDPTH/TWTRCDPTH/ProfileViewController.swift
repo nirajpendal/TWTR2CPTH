@@ -57,6 +57,8 @@ class ProfileViewController: UIViewController {
         self.profileTableView.refreshControl = refreshControl
         
         fetchUserTimelines()
+        
+        self.title = user.name
 
     }
     

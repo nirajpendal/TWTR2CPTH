@@ -33,8 +33,10 @@ class TweetsViewController: UIViewController {
         self.tweetTableView.refreshControl = refreshControl
         
         if !isMentions {
+            self.title = "Home"
             fetchTweets()
         } else {
+            self.title = "Mentions"
             fetchMentions()
         }
         
