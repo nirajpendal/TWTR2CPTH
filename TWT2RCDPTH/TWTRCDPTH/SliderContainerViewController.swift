@@ -12,6 +12,8 @@ class SliderContainerViewController: UIViewController, MenuDelegate {
 
     @IBOutlet weak var mainContainerViewLeadingContraint: NSLayoutConstraint!
     
+    var isMenuShown: Bool = false
+    
     var originalLeftMargin: CGFloat!
     var menuContoller: MenuViewController?
     var tweetsViewController: UIViewController!
@@ -20,6 +22,9 @@ class SliderContainerViewController: UIViewController, MenuDelegate {
     var mentionsViewController: TweetsViewController!
     var navController: UINavigationController!
     var viewControllers:[UIViewController]!
+    
+    fileprivate var visualEffectView: UIVisualEffectView?
+    fileprivate var visualEffectViewWidthConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +74,56 @@ class SliderContainerViewController: UIViewController, MenuDelegate {
     
     func hideMenu(){
         
+        if !isMenuShown {
+            return
+        }
+        
+        isMenuShown = false
+        
+        self.visualEffectViewWidthConstraint?.constant = 0
+        
         UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
-            
+            self.visualEffectView?.removeFromSuperview()
+            self.visualEffectView = nil
             self.mainContainerViewLeadingContraint.constant = 0
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
     
+    func showMenu() {
+
+        if isMenuShown {
+            return
+        }
+        
+        isMenuShown = true
+        self.mainContainerViewLeadingContraint.constant = 300
+
+        var frame = self.view.bounds
+        frame.size.width = 0
+        self.visualEffectView = UIVisualEffectView(frame: frame)
+        self.visualEffectView?.effect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        self.visualEffectView?.translatesAutoresizingMaskIntoConstraints = false
+        self.view.insertSubview(self.visualEffectView!, aboveSubview: (self.menuContoller?.view)!)
+        self.visualEffectView?.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.visualEffectView?.leadingAnchor.constraint(equalTo: self.menuContoller!.view.leadingAnchor, constant: 290 ).isActive = true
+        self.visualEffectView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        self.visualEffectViewWidthConstraint = self.visualEffectView?.widthAnchor.constraint(equalToConstant: self.view.bounds.size.width)
+        self.visualEffectViewWidthConstraint?.isActive = true
+        //Add tap gesture
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.visualEffectView?.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    dynamic func handleTap() {
+        self.hideMenu()
+        
+    }
+//
+//    func hideMenu() {
+//        self.mainContainerViewLeadingContraint.constant = 0
+//    }
     
     @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {
         
@@ -87,6 +135,10 @@ class SliderContainerViewController: UIViewController, MenuDelegate {
             originalLeftMargin = mainContainerViewLeadingContraint.constant
             print("began")
         case .changed:
+            if isMenuShown {
+                return
+            }
+            
             if (originalLeftMargin + translation.x) > 0  && (originalLeftMargin + translation.x) < 300{
                 mainContainerViewLeadingContraint.constant = originalLeftMargin + translation.x
             }
@@ -97,9 +149,11 @@ class SliderContainerViewController: UIViewController, MenuDelegate {
             UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                 if velocity.x > 0 {
                     // left
-                    self.mainContainerViewLeadingContraint.constant = 300
+                    self.showMenu()
+                    
                 } else {
-                    self.mainContainerViewLeadingContraint.constant = 0
+                    self.hideMenu()
+                    
                 }
                 self.view.layoutIfNeeded()
             }, completion: nil)

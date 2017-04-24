@@ -34,7 +34,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [X] Common Controllers for profile and Tweet
-- [X] 
+- [X] Added Blur visual effect view and enhaced slider view. Added Tap gesture on blur view to hide menu. Handled menu is shown and hiden edge conditions.  
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
