@@ -62,6 +62,10 @@ class TweetsViewController: UIViewController {
             strognSelf.tweetTableView.reloadData()
             strognSelf.refreshControl.endRefreshing()
             
+            if tweets.count == 0 {
+                strongself.displayError(message: "No Mentions to display")
+            }
+            
             self?.hideIndicator()
             
         }) { [weak self] (error:Error) in
